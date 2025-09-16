@@ -5,10 +5,11 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    color: #fff;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 20%, #16213e  50%, #1a1a2e 80%, #0a0a0a 100%);
+    color: #ffffff;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .container {
