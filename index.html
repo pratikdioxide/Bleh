@@ -1,16 +1,128 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Street Lights Management System</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-
 <body>
-  Hello world chi
-  <script src="script.js"></script>
-</body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-lightbulb"></i> Smart Street Lights Control Center</h1>
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="label">Total Lights:</span>
+                    <span id="total-lights">20</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">Active:</span>
+                    <span id="active-lights">12</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">Energy Saved:</span>
+                    <span id="energy-saved">2.4 kWh</span>
+                </div>
+            </div>
+        </header>
 
+        <div class="main-content">
+            <div class="controls-panel">
+                <div class="control-section">
+                    <h3>System Controls</h3>
+                    <div class="control-buttons">
+                        <button id="all-on-btn" class="btn btn-primary">
+                            <i class="fas fa-sun"></i> All On
+                        </button>
+                        <button id="all-off-btn" class="btn btn-secondary">
+                            <i class="fas fa-moon"></i> All Off
+                        </button>
+                        <button id="auto-mode-btn" class="btn btn-success">
+                            <i class="fas fa-robot"></i> Auto Mode
+                        </button>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>Settings</h3>
+                    <div class="setting-item">
+                        <label for="brightness-slider">Master Brightness:</label>
+                        <input type="range" id="brightness-slider" min="0" max="100" value="80">
+                        <span id="brightness-value">80%</span>
+                    </div>
+                    <div class="setting-item">
+                        <label for="motion-detection">Motion Detection:</label>
+                        <input type="checkbox" id="motion-detection" checked>
+                    </div>
+                    <div class="setting-item">
+                        <label for="light-sensor">Light Sensor:</label>
+                        <input type="checkbox" id="light-sensor" checked>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>Environmental Data</h3>
+                    <div class="env-data">
+                        <div class="env-item">
+                            <i class="fas fa-thermometer-half"></i>
+                            <span>Temperature: <strong id="temperature">22°C</strong></span>
+                        </div>
+                        <div class="env-item">
+                            <i class="fas fa-eye"></i>
+                            <span>Visibility: <strong id="visibility">Good</strong></span>
+                        </div>
+                        <div class="env-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Time: <strong id="current-time">19:45</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lights-grid">
+                <h3>Street Light Network</h3>
+                <div class="grid-container" id="lights-container">
+                    <!-- Street lights will be generated here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="analytics-panel">
+            <h3>Analytics Dashboard</h3>
+            <div class="charts-container">
+                <div class="chart-item">
+                    <h4>Energy Consumption (Today)</h4>
+                    <div class="energy-chart" id="energy-chart">
+                        <div class="bar" style="height: 60%;" data-hour="18:00"></div>
+                        <div class="bar" style="height: 80%;" data-hour="19:00"></div>
+                        <div class="bar" style="height: 90%;" data-hour="20:00"></div>
+                        <div class="bar" style="height: 95%;" data-hour="21:00"></div>
+                        <div class="bar" style="height: 100%;" data-hour="22:00"></div>
+                        <div class="bar" style="height: 85%;" data-hour="23:00"></div>
+                    </div>
+                </div>
+                <div class="chart-item">
+                    <h4>System Status</h4>
+                    <div class="status-indicators">
+                        <div class="indicator">
+                            <div class="indicator-light active"></div>
+                            <span>Network Connected</span>
+                        </div>
+                        <div class="indicator">
+                            <div class="indicator-light active"></div>
+                            <span>Auto Mode Active</span>
+                        </div>
+                        <div class="indicator">
+                            <div class="indicator-light warning"></div>
+                            <span>2 Lights Need Maintenance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
